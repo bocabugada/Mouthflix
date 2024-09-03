@@ -1,85 +1,119 @@
-/* Reset básico e configuração do corpo */
+/* Geral */
 body {
-    color: white;
+    color: rgb(173, 26, 161);
     background: black;
     margin: 0;
     font-family: "Chakra Petch", sans-serif;
-    padding-bottom: 100px; /* Espaço para o rodapé fixo */
+    padding-bottom: 60px; /* Ajuste conforme necessário */
 }
 
-/* Estilos para o cabeçalho */
 header {
-    border-bottom: solid 2px rgb(42, 122, 228);
+    border-bottom: solid 2px rgb(59, 21, 99);
     padding: 20px;
     font-size: 32px;
-    color: rgb(42, 122, 228);
-    text-align: center; /* Centraliza o texto do header */
-}
-
-/* Estilos para a seção de chamada */
-.chamada {
-    background: rgb(184, 156, 213);
-    padding: 80px 20px; /* Ajusta o padding para um espaçamento consistente */
-    display: flex;
-    flex-direction: column; /* Alinha o conteúdo na coluna para melhor controle */
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
-    text-align: center; /* Centraliza o texto dentro da chamada */
-}
-
-.chamada-texto {
-    margin-bottom: 20px; /* Adiciona espaço entre o texto e o vídeo */
+    color: rgb(59, 21, 99);
+    text-align: center;
 }
 
 h1 {
-    font-size: 40px;
+    margin: 0;
 }
 
-p {
+.chamada {
+    background: rgb(59, 21, 99);
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.chamada-texto h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.chamada-texto p {
     font-size: 20px;
 }
 
-/* Estilos para a seção de categorias */
+.video-container {
+    margin-top: 20px;
+}
+
 .categoria {
     padding: 20px;
     margin-top: 50px;
 }
 
 .categoria h2 {
-    color: rgb(42, 122, 228);
-    text-align: center; /* Centraliza o título da categoria */
+    color: rgb(59, 21, 99);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Estilos para os vídeos na seção de categorias */
 .categoria-videos {
     display: flex;
     overflow-x: auto;
     gap: 10px;
-    padding: 10px 0; /* Adiciona um pouco de padding ao redor dos vídeos */
-}
-
-.categoria-videos a {
-    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px 0;
 }
 
 .categoria-videos img {
-    opacity: 0.5;
+    opacity: 0.8;
     height: 200px;
-    border-radius: 8px; /* Adiciona bordas arredondadas nas imagens */
-    transition: all 0.3s ease; /* Suaviza a transição do hover */
+    transition: opacity 0.3s ease, border 0.3s ease;
+    border-radius: 8px;
 }
 
 .categoria-videos img:hover {
     opacity: 1.0;
-    border: 3px solid green;
+    border: 3px solid rgb(56, 56, 56);
 }
 
-/* Estilos para o rodapé */
 footer {
-    background: rgb(42, 122, 228);
-    color: white;
-    padding: 20px;
+    background: rgb(59, 21, 99);
+    color: rgb(255, 255, 255);
     text-align: center;
-    position: fixed; /* Mantém o rodapé na parte inferior da página */
+    padding: 20px;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    left: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .chamada-texto h2 {
+        font-size: 28px;
+    }
+
+    .chamada-texto p {
+        font-size: 18px;
+    }
+
+    .categoria-videos img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chamada-texto h2 {
+        font-size: 24px;
+    }
+
+    .chamada-texto p {
+        font-size: 16px;
+    }
+
+    .categoria-videos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categoria-videos img {
+        width: 100%;
+        height: auto;
+    }
 }
